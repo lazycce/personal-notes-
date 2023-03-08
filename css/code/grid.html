@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+    <style>
+        body>div {
+            margin-top: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .grid div {
+            border: 1px solid #eee;
+            text-align: center;
+            line-height: 100px;
+        }
+        .grid1 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 20px;
+            width: 400px;
+            height: 400px;
+        }
+        
+        .grid1 .item1 {
+            background-color: rebeccapurple;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        .grid1 .item2 {
+            background-color: aqua;
+            grid-column-start: 3;
+            grid-column-end: 5;
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+        .grid1 .item3 {
+            background-color:antiquewhite;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+        .grid1 .item4 {
+            background-color: darkorange;
+            grid-column-start: 3;
+            grid-column-end: 5;
+        }
+
+        .grid2 {
+            display: grid;
+            width: 400px;
+            height: 400px;
+            grid-template-areas: 
+                "header header header header"
+                "main  main · sidebar"
+                "footer footer footer footer"
+        }
+        .grid2 .header {
+            background-color: #F7872E;
+            grid-area: header;
+        }
+        .grid2 .main {
+            background-color: #34B6E0;
+            grid-area: main;
+        } 
+        .grid2 .sidebar {
+            background-color: #E26661;
+            grid-area: sidebar;
+        }
+        .grid2 .footer {
+            background-color: #68BD70;
+            grid-area: footer;
+        }
+
+
+        .grid3 {
+            display: grid;
+            width: 400px;
+            height: 400px;
+            grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+        }
+        .grid3 .item1 {
+            background-color: rebeccapurple;
+        }
+        .grid3 .item2 {
+            background-color: aqua;
+        }
+        .grid3 .item3 {
+            background-color: beige;
+        }
+        .grid3 .item4 {
+            background-color: cadetblue;
+        }
+
+        
+        .grid4 {
+            display: grid;
+            width: 100px;
+            height: 100px;
+            background-color: #68BD70;
+            align-items: center;
+            justify-items: center;
+        }
+        .grid4 div {
+            width: 50px;
+            height: 50px;
+            background-color: #34B6E0;
+        }
+        .grid5 {
+            display: grid;
+            width: 100px;
+            height: 100px;
+            background-color: #68BD70;
+            place-items: center;
+        }
+        .grid5 div {
+            width: 50px;
+            height: 50px;
+            background-color: #34B6E0;
+        }
+        .grid6 {
+            display: grid;
+            width: 100px;
+            height: 100px;
+            background-color: #68BD70;
+        }
+        .grid6 div {
+            width: 50px;
+            height: 50px;
+            background-color: #34B6E0;
+            align-self: center;
+            justify-self: center;
+        }
+        .grid7 {
+            display: grid;
+            width: 100px;
+            height: 100px;
+            background-color: #68BD70;
+            grid-template: repeat(4, 1fr)
+        }
+        .grid7 div {
+            width: 50px;
+            height: 50px;
+            background-color: #34B6E0;
+            grid-row-start: 2;
+            grid-column-start: 2;
+        }
+    </style>
+</head>
+<body>
+    <!-- grid -->
+    <div class="grid">
+        <div class="item">item1</div>
+        <div class="item">item2</div>
+        <div class="item">item3</div>
+        <div class="item">item4</div>
+    </div>
+
+    <!-- start end -->
+    <div class="grid1">
+        <div class="item1"></div>
+        <div class="item2"></div>
+        <div class="item3"></div>
+        <div class="item4"></div>
+    </div>
+
+    <!--- grid area -->
+    <div class="grid2">
+        <div class="header">header</div>
+        <div class="main">main</div>
+        <div class="sidebar">sidebar</div>
+        <div class="footer">footer</div>
+    </div>
+
+    <!-- grid-template 简化-->
+    <div class="grid3">
+        <div class="item1"></div>
+        <div class="item2"></div>
+        <div class="item3"></div>
+        <div class="item4"></div>
+    </div>
+
+    <!-- 垂直居中 -->
+    <div class="grid4">
+        <div></div>
+    </div>
+    <div class="grid5">
+        <div></div>
+    </div>
+    <div class="grid6">
+        <div></div>
+    </div>
+    <div class="grid7">
+        <div></div>
+    </div>
+</body>
+</html>
